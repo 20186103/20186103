@@ -1,4 +1,6 @@
 print("Hello!")
-for i in range(10,1,-1):
-	if i%2==0:
+i=10
+while(i>1):
+	if i%2 == 0:
 		print(i)
+	i -= 1
