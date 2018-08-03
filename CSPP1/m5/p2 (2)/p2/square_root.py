@@ -9,7 +9,6 @@
 # input: 49
 # output: 6.999999999999991
 
-"'to find the square root of the given number using approximation method'"
 def main():
     """using approximation method"""
     given_number = int(input())
