@@ -1,8 +1,8 @@
-# Write a python program to find the square root of the given number 
+"""# Write a python program to find the square root of the given number 
 # using approximation method
 
 def main():
-    #your code here
+    """# using approximation method#your code here"""
     square = int(input('enter an integer: '))
     epsilon = 0.01
     guess = 0.0
@@ -18,5 +18,5 @@ def main():
         print(guess, 'is close to the cube root of', square)
     
 
-if __name__== "__main__":
-	main()
+if __name__ == "__main__":
+    main()
