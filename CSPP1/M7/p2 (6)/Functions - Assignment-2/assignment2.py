@@ -28,14 +28,14 @@ def paying_debt_off_in_a_year(inp_balance, annual_interest_rate):
     while balance > 0:
         balance = inp_balance
         monthly_payment = monthly_payment + 10
-        month = 1
-        while month <= 12:
+        i = 1
+        while i <= 12:
             monthly_interest_rate = (annual_interest_rate) / 12.0
             monthly_unpaid_balance = (balance) - (monthly_payment)
             updated_balance_each_month = (monthly_unpaid_balance) + \
             (monthly_interest_rate * monthly_unpaid_balance)
             balance = updated_balance_each_month
-            month += 1
+            i += 1
     return monthly_payment
 def main():
     """ it is a main function"""
@@ -45,4 +45,3 @@ def main():
     print("Lowest Payment: " + str(paying_debt_off_in_a_year(data[0], data[1])))
 if __name__ == "__main__":
     main()
-
