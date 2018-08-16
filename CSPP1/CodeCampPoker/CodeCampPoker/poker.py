@@ -18,9 +18,9 @@ def is_straight(hand):
     hand_list = []
     for i in hand:
         hand_list.append(card_list[i[0]])
-    hand_list1.sort()
-    for i in range(0, len(hand_list1)-1):
-        if int(hand_list1[i+1]) - int(hand_list1[i]) != 1:
+    hand_list.sort()
+    for i in range(0, len(hand_list)-1):
+        if int(hand_list[i+1]) - int(hand_list[i]) != 1:
             return False
     return True
 def is_flush(hand):
