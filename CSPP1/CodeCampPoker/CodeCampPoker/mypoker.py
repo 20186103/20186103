@@ -3,6 +3,7 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
+card_list = {'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'T':10,'J':11,'Q':12,'K':13,'A':14}
 
 def is_straight(hand):
     '''
@@ -14,25 +15,16 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    list1 = []
+    hand_list = []
     for i in hand:
-        if i[0] == 'T':
-            list1.append(10)
-        elif i[0] == 'J':
-            list1.append(11)
-        elif i[0] == 'Q':
-            list1.append(12)
-        elif i[0] == 'K':
-            list1.append(13)
-        elif i[0] == 'A':
-            list1.append(14)
-        else:
-            list1.append(int(i[0]))
-    list1.sort()
-    for i in range(0, len(list1)-1):
-        if int(list1[i+1]) - int(list1[i]) != 1:
-            return False
-    return True
+        hand_list.append(card_list[i[0]])
+    hand_list.sort()
+    if int(hand_list[0])-int(hand_list[1])==1 and int(hand_list[1])-int(hand_list[2])==1 and int(hand_list[2])-int(hand_list[3])==1 and int(hand_list[3])-int(hand_list[4])==1:
+        print(hand)
+        return True
+    else:
+        return False
+
 def is_flush(hand):
     '''
         How do we find out if the given hand is a flush?
@@ -42,11 +34,11 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    suit = hand[0]
-    for h_a in hand:
-        if suit[1] != h_a[1]:
-            return False
-    return True
+    if hand[0][1]==hand[1][1]==hand[2][1]==hand[3][1]==hand[4][1]:
+        return True
+        print(hand)
+    else:
+        return False
 
 def hand_rank(hand):
     '''
@@ -58,7 +50,7 @@ def hand_rank(hand):
     '''
 
     # By now you should have seen the way a card is represented.
-    # If you haven't then go the mai}}}n or poker function and print the hands789
+    # If you haven't then go the main or poker function and print the hands
     # Each card is coded as a 2 character string. Example Kind of Hearts is KH
     # First character for face value 2,3,4,5,6,7,8,9,T,J,Q,K,A
     # Second character for the suit S (Spade), H (Heart), D (Diamond), C (Clubs)
@@ -78,7 +70,8 @@ def hand_rank(hand):
         return 2
     elif is_straight(hand):
         return 1
-    return 0
+    else:
+        return 0
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
@@ -110,6 +103,3 @@ if __name__ == "__main__":
         HANDS.append(ha)
     # test the poker function to see how it works
     print(' '.join(poker(HANDS)))
- 
-poker.py
-Displaying poker.py.
