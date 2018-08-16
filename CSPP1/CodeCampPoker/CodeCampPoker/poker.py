@@ -30,9 +30,9 @@ def is_straight(hand):
             list1.append(int(i[0]))
     list1.sort()
     for i in range(0, len(list1)-1):
-        if int(list1[i+1]) - int(list1[i]) != 1:
-            return False
-    return True
+        if int(list1[i+1]) - int(list1[i]) == 1:
+            return True
+    return False
 def is_flush(hand):
     '''
         How do we find out if the given hand is a flush?
@@ -44,9 +44,9 @@ def is_flush(hand):
     '''
     suit = hand[0]
     for card in hand:
-        if suit[1] != card[1]:
-            return False
-    return True
+        if suit[1] == card[1]:
+            return True
+    return False
 
 def hand_rank(hand):
     '''
