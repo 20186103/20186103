@@ -111,5 +111,3 @@ if __name__ == "__main__":
     # test the poker function to see how it works
     print(' '.join(poker(HANDS)))
  
-poker.py
-Displaying poker.py.
