@@ -3,7 +3,6 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-card_list = {'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'T':10,'J':11,'Q':12,'K':13,'A':14}
 
 def is_straight(hand):
     '''
@@ -15,12 +14,23 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    hand_list = []
+    list1 = []
     for i in hand:
-        hand_list.append(card_list[i[0]])
-    hand_list1.sort()
-    for i in range(0, len(hand_list1)-1):
-        if int(hand_list1[i+1]) - int(hand_list1[i]) != 1:
+        if i[0] == 'T':
+            list1.append(10)
+        elif i[0] == 'J':
+            list1.append(11)
+        elif i[0] == 'Q':
+            list1.append(12)
+        elif i[0] == 'K':
+            list1.append(13)
+        elif i[0] == 'A':
+            list1.append(14)
+        else:
+            list1.append(int(i[0]))
+    list1.sort()
+    for i in range(0, len(list1)-1):
+        if int(list1[i+1]) - int(list1[i]) != 1:
             return False
     return True
 def is_flush(hand):
