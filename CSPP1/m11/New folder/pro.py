@@ -1,3 +1,13 @@
+def delete_duplicates(adict):
+    for char in adict:
+        uniques = []
+        for value in adict[char]:
+            if value not in uniques:
+                uniques.append(value)
+        adict[char] = uniques
+    return adict
+
+
 
 def main():
     '''main function'''
@@ -12,5 +22,4 @@ def main():
         else:
             adict[list1[0]].append(int(list1[1]))
         i += 1
-    print(adict)
-main()
+    print(delete_duplicates(adict))

@@ -16,6 +16,7 @@ def how_many(aDict):
         count = len(empty_list)
         sum += count
     return sum
+    
 
     
 
