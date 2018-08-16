@@ -46,7 +46,11 @@ def kind(ranks,n):
             return r
     return 0
 def two_pair(ranks):
-    
+    one = kind(ranks,2)
+    two = kind(sorted(ranks),2)
+    if one and two:
+        return(one,two)
+    return None
 
 def hand_rank(hand):
     '''
@@ -86,9 +90,11 @@ def hand_rank(hand):
         return(4,ranks)
     if kind(ranks,3):
         return(3,kind(ranks,3),ranks)
-
+    if two_pair(ranks):
+        return(2,two_pair(ranks,2),ranks)
     if kind(ranks,2):
         return(1,kind(ranks,2),ranks)
+    return(0,ranks)
 
     
 def poker(hands):
