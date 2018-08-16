@@ -43,8 +43,8 @@ def is_flush(hand):
         Write the code for it and return True if it is a flush else return False
     '''
     suit = hand[0]
-    for h_a in hand:
-        if suit[1] != h_a[1]:
+    for card in hand:
+        if suit[1] != card[1]:
             return False
     return True
 
