@@ -37,16 +37,6 @@ def is_flush(hand):
         if suit[1] != card[1]:
             return False
     return True
-def card_ranks(hand):
-    ranks = sorted(['--23456789TJQKA'.index(c) for c,s in hand],reverse=True)
-    return ranks
-def kind(ranks,n):
-    for r in ranks:
-        if ranks.count(r)==n:
-            return r
-    return 0
-def two_pair(ranks):
-    
 
 def hand_rank(hand):
     '''
@@ -72,25 +62,13 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
-    ranks=card_rank(hand)
-    #print(ranks)
     if is_straight(hand) and is_flush(hand):
-        return (8,ranks)
-    if kind(ranks,4):
-        return(7,kind(ranks,4),ranks)
-    if kind(ranks,3) and kind(ranks,2):
-        return(6,(kind(ranks,3)),(kind(ranks,2)))
-    if is_flush(hand):
-        return(5,ranks)
-    if is_straight(ranks):
-        return(4,ranks)
-    if kind(ranks,3):
-        return(3,kind(ranks,3),ranks)
-
-    if kind(ranks,2):
-        return(1,kind(ranks,2),ranks)
-
-    
+        return 3
+    elif is_flush(hand):
+        return 2
+    elif is_straight(hand):
+        return 1
+    return 0
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
