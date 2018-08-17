@@ -16,17 +16,17 @@ def similarity(dict1, dict2):
             if i not in "!@#$%^&*()_+-=.,":
                 if i not in "'":
                     dicti[i] = (list1.count(i), list2.count(i))
-    num = 0
+    numerator = 0
     sum1 = 0
     sum2 = 0
-    dem = 0
+    denominator = 0
     res = 0
     for i in dicti:
         num += dicti[i][0] * dicti[i][1]
         sum1 += dicti[i][0] ** 2
         sum2 += dicti[i][1] ** 2
-    dem = math.sqrt(sum1) * math.sqrt(sum2)
-    res = num / dem
+    denominator = math.sqrt(sum1) * math.sqrt(sum2)
+    res = numerator / denominator
     return res
 
 
