@@ -11,20 +11,20 @@ def similarity(dict1, dict2):
     list2 = dict2.split(' ')
     l_3 = list1 + list2
     dicti = {}
-    for word in l_3:
-        if word not in load_stopwords(FILE).keys():
-            if word not in "!@#$%^&*()_+-=.,":
-                if word not in "'":
-                    dicti[word] = (list1.count(word), list2.count(word))
+    for i in l_3:
+        if i not in load_stopwords(FILE).keys():
+            if i not in "!@#$%^&*()_+-=.,":
+                if i not in "'":
+                    dicti[i] = (list1.count(i), list2.count(i))
     num = 0
     sum1 = 0
     sum2 = 0
     dem = 0
     res = 0
-    for word in dicti:
-        num += dicti[word][0] * dicti[word][1]
-        sum1 += dicti[word][0] ** 2
-        sum2 += dicti[word][1] ** 2
+    for i in dicti:
+        num += dicti[i][0] * dicti[i][1]
+        sum1 += dicti[i][0] ** 2
+        sum2 += dicti[i][1] ** 2
     dem = math.sqrt(sum1) * math.sqrt(sum2)
     res = num / dem
     return res
