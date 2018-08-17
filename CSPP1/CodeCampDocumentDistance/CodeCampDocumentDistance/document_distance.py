@@ -23,8 +23,8 @@ def similarity(dict1, dict2):
     	numerator += dictionary[i][0] * dictionary[i][1]
     	sum1 += dictionary[i][0] ** 2
     	sum2 += dictionary[i][2] ** 2
-    	denom = math.sqrt(sum1) * math.sqrt(sum2)
-    	output = numerator//denom
+    denom = math.sqrt(sum1) * math.sqrt(sum2)
+    output = numerator//denom
     return output
 
 
