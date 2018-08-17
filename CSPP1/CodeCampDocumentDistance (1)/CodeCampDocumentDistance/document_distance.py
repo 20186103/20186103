@@ -38,7 +38,7 @@ def similarity(dict1, dict2):
         sum0 = sum0 + (d_1[0]**2)
         sum1 = sum1 + (d_1[1]**2)
     denom = math.sqrt(sum0) * math.sqrt(sum1)
-    return (num/denom)
+    return num/denom
 
 
 def load_stopwords(filename):
@@ -62,3 +62,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
