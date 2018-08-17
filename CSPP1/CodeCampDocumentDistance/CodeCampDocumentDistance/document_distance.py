@@ -22,7 +22,7 @@ def similarity(dict1, dict2):
     denominator = 0
     res = 0
     for i in dicti:
-        num += dicti[i][0] * dicti[i][1]
+        numerator += dicti[i][0] * dicti[i][1]
         sum1 += dicti[i][0] ** 2
         sum2 += dicti[i][1] ** 2
     denominator = math.sqrt(sum1) * math.sqrt(sum2)
