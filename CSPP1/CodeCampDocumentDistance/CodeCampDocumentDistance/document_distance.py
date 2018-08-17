@@ -13,7 +13,7 @@ def similarity(dict1, dict2):
     dicti = {}
     for i in l_3:
         if i not in load_stopwords(FILE).keys():
-            if i not in "!@#$%^&*()_+-=.,":
+            if i not in "!@#$%^&*()_+-=.,1234567890":
                 if i not in "'":
                     dicti[i] = (list1.count(i), list2.count(i))
     numerator = 0
