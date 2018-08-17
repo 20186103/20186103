@@ -22,7 +22,7 @@ def similarity(dict1, dict2):
         Compute the document distance as given in the PDF
     '''
     d1 = {}
-    d1 = remove_wordsdict(dict1,dict2)
+    d1 = remove_wordsdict(dict1, dict2)
     num = 0
     denom = 0
     sum0 = 0
