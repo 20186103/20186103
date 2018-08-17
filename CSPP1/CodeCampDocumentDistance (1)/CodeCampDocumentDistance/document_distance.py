@@ -27,6 +27,9 @@ def similarity(dict1, dict2):
     dictionary ={}
     dictionary=create_dictionary(dict1,dict2)
     numerator = 0
+    d1=0
+    d2=0
+    denominator=0
     for d in dictionary.values():
         numerator = numerator + d[0]*d[1]
         d1 = d1 + (d[0]**2)
