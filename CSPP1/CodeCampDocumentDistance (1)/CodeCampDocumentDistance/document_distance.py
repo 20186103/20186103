@@ -9,10 +9,10 @@ def cleanup_words(input1):
     '''
     reg = re.compile('[^a-z]')
     input1 = input1.lower()
-    input1 = [reg.sub('',w.strip())for w in input1.split(' ')]
+    input1 = [reg.sub('', w.strip())for w in input1.split(' ')]
     return input1
 
-def remove_wordsdict(input1,input2):
+def remove_wordsdict(input1, input2):
     '''
     creating words in dictionary
     '''
@@ -62,4 +62,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
