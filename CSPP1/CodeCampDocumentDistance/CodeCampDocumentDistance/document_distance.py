@@ -19,7 +19,7 @@ def similarity(dict1, dict2):
     numerator = 0
     sum1 = 0
     sum2 = 0
-    for i in dictionary :
+    for i in dictionary:
     	numerator += dictionary[i][0] * dictionary[i][1]
     	sum1 += dictionary[i][0] ** 2
     	sum2 += dictionary[i][2] ** 2
