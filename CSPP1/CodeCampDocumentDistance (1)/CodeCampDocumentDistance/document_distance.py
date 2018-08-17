@@ -1,42 +1,39 @@
 '''
-    Document Distance - A detailed description is given in the PDF
-'''
-import math
+    Document Distance - A detailed description is given in the PDF'''
 import re
-stopwords = "stopwords.txt"
-def cleaning(input1):
+import math
+FILE = "stopwords.txt"
+def cleanup_words(input1):
     reg = re.compile('[^a-z]')
     input1 = input1.lower()
-    input1 = [reg.sub('',w.strip())for w in input1]
+    input1 = [reg.sub('',w.strip())for w in input1.split(' ')]
     return input1
-def create_dictionary(input1,input2):
-    d = {}
-    d = load_stopwords(stopwords)
-    list1 = cleaning(input1)
-    list2 = cleaning(input2)
-    world_list = list1 + list2
-    dictionary = {}
-    for word in world_list:
-        if word not in d and len(word)>0:
-            dictionary[word] = (list1.count(word),list2.count(word))
-    print(dictionary)
-    return dictionary 
+
+def remove_wordsdict(input1,input2):
+    list3 = cleanup_words(input1) + cleanup_words(input2)
+    dic = {}
+    for word in list3:
+        if word not in load_stopwords(FILE).keys() and len(word) > 0:
+            dic[word] = (cleanup_words(input1).count(word), cleanup_words(input2).count(word))
+    return dic
+
 def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    dictionary ={}
-    dictionary=create_dictionary(dict1,dict2)
-    numerator = 0
-    d1=0
-    d2=0
-    denominator=0
-    for d in dictionary.values():
-        numerator = numerator + d[0]*d[1]
-        d1 = d1 + (d[0]**2)
-        d2 = d2 + (d[0]**2)
-        denominator = math.sqrt(d1)*math.sqrt(d2)
-        return (numerator/denominator)
+    d1 = {}
+    d1 = remove_wordsdict(dict1,dict2)
+    num = 0
+    denom = 0
+    sum0 = 0
+    sum1 = 0
+    for d1 in d1.values():
+        num = num + (d1[0]*d1[1])
+        sum0 = sum0 + (d1[0]**2)
+        sum1 = sum1 + (d1[1]**2)
+    denom = math.sqrt(sum0) * math.sqrt(sum1)
+    return (num/denom)
+
 
 def load_stopwords(filename):
     '''
@@ -50,7 +47,7 @@ def load_stopwords(filename):
 
 def main():
     '''
-        take two inputs and call the similarity function
+        take two inputs and call the similarity functions
     '''
     input1 = input()
     input2 = input()
