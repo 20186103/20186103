@@ -14,7 +14,8 @@ def similarity(dict1, dict2):
     for word in l_3:
         if word not in load_stopwords(FILE).keys():
             if word not in "!@#$%^&*()_+-=.,":
-                dicti[word] = (list1.count(word), list2.count(word))
+                if word not in "'":
+                    dicti[word] = (list1.count(word), list2.count(word))
     num = 0
     sum1 = 0
     sum2 = 0
