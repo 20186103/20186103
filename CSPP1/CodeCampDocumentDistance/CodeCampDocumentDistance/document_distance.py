@@ -20,11 +20,12 @@ def similarity(dict1, dict2):
     sum1 = 0
     sum2 = 0
     for i in dictionary :
-    	numerator += dictionary[i][0]*dictionary[i][1]
-    	sum1 += dictionary[i][0]**2
-    	sum2 += dictionary[i][2]**2
-    	denom = math.sqrt(sum1)*math.sqrt(sum2)
+    	numerator += dictionary[i][0] * dictionary[i][1]
+    	sum1 += dictionary[i][0] ** 2
+    	sum2 += dictionary[i][2] ** 2
+    	denom = math.sqrt(sum1) * math.sqrt(sum2)
     	output = numerator//denom
+    return output
 
 
 def load_stopwords(filename):
