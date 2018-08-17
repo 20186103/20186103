@@ -7,7 +7,7 @@ stopwords = "stopwords.txt"
 def cleaning(input1):
     reg = re.compile('[^a-z]')
     input1 = input1.lower()
-    input1 = [reg.sub('',w,strip())for w in input1]
+    input1 = [reg.sub('',w.strip())for w in input1]
     return input1
 def create_dictionary(input1,input2):
     d = {}
