@@ -15,7 +15,7 @@ def similarity(dict1, dict2):
     for i in list3:
     	if i not in load_stopwords(FILE).keys():
     		if i not in "!@#$%^&*()_+":
-                 dictionary = {dict1.count(i), dict2.count(i)}
+                 dictionary = (dict1.count(i), dict2.count(i))
     numerator = 0
     sum1 = 0
     sum2 = 0
