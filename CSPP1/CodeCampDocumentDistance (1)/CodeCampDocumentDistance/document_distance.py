@@ -19,6 +19,7 @@ def create_dictionary(input1,input2):
     for word in world_list:
         if word not in d and len(word)>0:
             dictionary[word] = (list1.count(word),list2.count(word))
+    print(dictionary)
     return dictionary 
 def similarity(dict1, dict2):
     '''
