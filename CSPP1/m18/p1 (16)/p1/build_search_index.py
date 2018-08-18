@@ -66,7 +66,7 @@ def build_search_index(docs):
 # use this to verify how the search index looks
     search_index = {}
     for (i, j) in enumerate(docs):
-    	search_index = docs.append(lines)
+    	search_index = docs.append(docs)
     return search_index
 
 def print_search_index(index):
