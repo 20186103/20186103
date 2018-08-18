@@ -49,7 +49,7 @@ def process_queries(search_index, queries):
     '''
     for queries in search_index:
         for word in queries:
-            search_index = queries[word][0]
+            search_index = queries[1][0]
     return search_index
 def main():
     '''
