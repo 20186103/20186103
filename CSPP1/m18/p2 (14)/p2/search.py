@@ -48,8 +48,8 @@ def process_queries(search_index, queries):
         print the results returned by search function
     '''
     for queries in search_index:
-        for i in queries:
-            search_index = queries[1][0]
+        for word in queries:
+            search_index = queries[word][0]
     return search_index
 def main():
     '''
@@ -72,4 +72,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
